@@ -4,6 +4,7 @@ from huawei_lte_api.Client import Client
 from huawei_lte_api.AuthorizedConnection import AuthorizedConnection
 import time
 
+
 ADMIN_PASSWORD = 'password'
 FORWARD_TO = ['phone_number']
 
@@ -11,6 +12,7 @@ ROUTER_ADDRESS = '192.168.8.1'
 ADMIN_USER = 'admin'
 CHECK_INTERVAL = 60
 DELETE_FORWARDED = True
+
 
 client = Client(AuthorizedConnection(f'http://{ADMIN_USER}:{ADMIN_PASSWORD}@{ROUTER_ADDRESS}'))
 
