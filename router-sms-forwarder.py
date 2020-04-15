@@ -19,9 +19,15 @@ client = Client(AuthorizedConnection(f'http://{ADMIN_USER}:{ADMIN_PASSWORD}@{ROU
 while True:
     sms_list = client.sms.get_sms_list()['Messages']
     if sms_list:
-        for message in sms_list['Message'][::-1]:
-            if message['Smstat'] == '0':
-                client.sms.send_sms(FORWARD_TO, f"[{message['Phone']}] {message['Content']}")
+        sms_list = sms_list['Message']
+        if type(sms_list) != list:
+            sms_list = [sms_list]
+        else:
+            sms_list = sms_list[::-1]
+        for sms in sms_list:
+            if sms['Smstat'] == '0':
+                client.sms.send_sms(FORWARD_TO, f"[{sms['Phone']}] {sms['Content']}")
                 if DELETE_FORWARDED:
-                    client.sms.delete_sms(message['Index'])
+                    client.sms.delete_sms(sms['Index'])
     time.sleep(CHECK_INTERVAL)
+
