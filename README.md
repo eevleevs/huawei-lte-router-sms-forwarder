@@ -1,4 +1,4 @@
-# huawei-lte-router-sms-forwarder
+# Huawei LTE router SMS forwarder
 
 Forwards SMS received on a compatible Huawei LTE router to a list of phone numbers.
 
