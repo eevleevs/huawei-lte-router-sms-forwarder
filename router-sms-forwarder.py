@@ -9,7 +9,6 @@ ADMIN_PASSWORD = 'password'
 FORWARD_TO = ['phone_number']
 
 ROUTER_ADDRESS = '192.168.8.1'
-ADMIN_USER = 'admin'
 CHECK_INTERVAL = 60
 DELETE_FORWARDED = True
 
