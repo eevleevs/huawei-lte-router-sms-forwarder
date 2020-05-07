@@ -14,7 +14,7 @@ CHECK_INTERVAL = 60
 DELETE_FORWARDED = True
 
 
-client = Client(AuthorizedConnection(f'http://{ADMIN_USER}:{ADMIN_PASSWORD}@{ROUTER_ADDRESS}'))
+client = Client(AuthorizedConnection(f'http://admin:{ADMIN_PASSWORD}@{ROUTER_ADDRESS}'))
 
 while True:
     sms_list = client.sms.get_sms_list()['Messages']
